@@ -1,0 +1,15 @@
+name: matrix-cp
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pip
+  - pip:
+      - torch==2.2.2
+      - torchvision==0.17.2
+      - numpy<2
+      - tensorly
+      - transformers<5
+      - calflops
